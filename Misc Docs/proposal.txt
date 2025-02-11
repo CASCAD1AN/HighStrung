@@ -1,0 +1,6 @@
+﻿Project Proposal
+Team 4: High Strung
+Team Members: Michael McGuan and Derek Woodard
+Project Title: Music Studio Administration System
+Overview
+Independent music instructors may have studios with as many as 40 private students, each of whom is studying three to four different pieces at a time.  With students paying monthly, a teacher could be receiving 480 payments each year.  This project is motivated by the need to simplify the bookkeeping tasks involved in running a studio.  Teachers need to record payments, take attendance at lessons, and keep track of which repertoire has been assigned to each student.  With the proposed system, teachers will be able to see at a glance which students have paid each month, view a student’s past and current assignments, and review attendance and payment history.

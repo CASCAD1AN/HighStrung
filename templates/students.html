@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link href="/static/main.css" rel="stylesheet" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>High Strung</title>
+</head>
+
+
+<body>
+
+    <header>
+        <h1>High Strung - Group 4</h1>
+        <p>Music Studio Management System</p>
+    </header>
+
+    <nav class="main-nav">
+        <a href="index.html">Home</a>
+        <a href="students.html">Students</a>
+        <a href="lessons.html">Lessons</a>
+        <a href="instruments.html">Instruments</a>
+        <a href="pieces.html">Pieces</a>
+        <a href="composers.html">Composers</a>
+    </nav>
+
+<!--
+    <main>
+        <section>
+            <h2>About</h2>
+            <article>
+                <p>
+                    Welcome to Every Good Boy, a music studio management system for private instructors. You can use this website to keep track of attendance at lessons and assignments given to students.  Start by entering data about your students, the instruments you teach, and the pieces in your library. Then you can record lessons for each student and add assigned pieces. We hope you find this tool useful.
+                </p>
+            </article>
+        </section>
+
+    </main>
+-->
+<main>
+    <section>
+    <h2>Students</h2>
+        <p class="mbmt-10">From here, you may edit or delete current students, or add new students to the database.</p>
+
+        <div class="add-student">
+            <button class="add-student-button">Add New Student</button>
+        </div>
+        
+        <table class="student-table">
+            <thead>
+                <tr>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Address</th>
+                    <th>City</th>
+                    <th>State</th>
+                    <th>Zip</th>
+                    <th>Phone</th>
+                    <th>Email</th>
+                    <th>Parent First Name</th>
+                    <th>Parent Last Name</th>
+                    <th>Active?</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Lisa</td>
+                    <td>Hernandez</td>
+                    <td>9691 College St</td>
+                    <td>Portland</td>
+                    <td>OR</td>
+                    <td>97223</td>
+                    <td>647-834-0756</td>
+                    <td>lisa.hernandez@example.com</td>
+                    <td>N/A</td> <!--Will be NULL in database / Flask/Jinja implementation TBD-->
+                    <td>N/A</td> <!--Will be NULL in database / Flask/Jinja implementation TBD-->
+                    <td>No</td> <!--0 in database will be "No" for Active-->
+                    <td>
+                        <button class="edit-student-button">Edit</button>
+                        <button class="delete-student-button">Delete</button>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>Marilyn</td>
+                    <td>Freeman</td>
+                    <td>3388 Spring St</td>
+                    <td>Beaverton'</td>
+                    <td>OR</td>
+                    <td>97005</td>
+                    <td>449-427-5498</td>
+                    <td>marilyn.freeman@example.com</td>
+                    <td>Sarah</td>
+                    <td>Freeman</td>
+                    <td>Yes</td> <!--DEFAULT or 1 in database will be "Yes" for Active-->
+                    <td>
+                        <button class="edit-student-button">Edit</button>
+                        <button class="delete-student-button">Delete</button>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>Arnold</td>
+                    <td>Lee</td>
+                    <td>1365 Fincher Rd</td>
+                    <td>Gresham</td>
+                    <td>OR</td>
+                    <td>97030</td>
+                    <td>693-247-9479</td>
+                    <td>arnold.lee@example.com</td>
+                    <td>N/A</td> <!--Will be NULL in database / Flask/Jinja implementation TBD-->
+                    <td>N/A</td> <!--Will be NULL in database / Flask/Jinja implementation TBD-->
+                    <td>Yes</td> <!--DEFAULT or 1 in database will be "Yes" for Active-->
+                    <td>
+                        <button class="edit-student-button">Edit</button>
+                        <button class="delete-student-button">Delete</button>
+                    </td>
+                </tr>
+
+                <!--{products.map((product, index) => (
+                    <ProductRow key={index} product={product} />
+            ))} -->
+            </tbody>
+        </table>
+    </section>
+
+    <section class="mbmt-10 center-content">
+        <p>If deleting students from rows, please <a href="students.html">refresh page</a> to restore all sample data.</p>
+    </section>
+
+    <section class="center-form">
+        <div class="add-form form-layout" style="display: none;">
+            <form id="add-form">
+                <h3 class="mbmt-10 form-title-decorator">Add New Student</h3>
+                    <div class="form-row">
+                    <label for="firstName">First Name:</label>
+                    <input type="text" id="firstName" name="firstName" required>
+            
+                    <label for="lastName">Last Name:</label>
+                    <input type="text" id="lastName" name="lastName" required>
+                </div>
+                <div class="form-row">
+                    <label for="address">Street Address:</label>
+                    <input type="text" id="address" name="address">
+            
+                    <label for="city">City:</label>
+                    <input type="text" id="city" name="city">
+            
+                    <label for="state">State:</label>
+                    <input type="text" id="state" name="state" maxlength="2" style="width: 50px;">
+            
+                    <label for="zip">Zip:</label>
+                    <input type="text" id="zip" name="zip" maxlength="10">
+                </div>
+                <div class="form-row">
+                    <label for="phone">Phone Number:</label>
+                    <input type="tel" id="phone" name="phone">
+            
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email">
+                </div>
+                <div class="form-row">
+                    <label for="parentFirstName">Parent First Name:</label>
+                    <input type="text" id="parentFirstName" name="parentFirstName">
+            
+                    <label for="parentLastName">Parent Last Name:</label>
+                    <input type="text" id="parentLastName" name="parentLastName">
+                </div>
+                <div class="form-row">
+                    <label for="isActive">Active?</label>
+                    <select id="isActive" name="isActive">
+                        <option value="1">Yes</option>   <!--DEFAULT = 1 in database-->
+                        <option value="0">No</option>
+                    </select>
+            
+                    <button type="button" id="add-submit-button">Submit</button>
+                    <button type="button" id="add-cancel-button">Cancel</button>
+                </div>
+            </form>
+        </div>
+        
+    </section>
+
+    <section class="center-form">
+        <div class="edit-form form-layout" style="display: none;">
+            <form id="edit-form">
+                <h3 class="mbmt-10 form-title-decorator">Edit Student</h3>
+                <div class="form-row">
+                    <label for="editFirstName">First Name:</label>
+                    <input type="text" id="editFirstName" name="firstName" required>
+        
+                    <label for="editLastName">Last Name:</label>
+                    <input type="text" id="editLastName" name="lastName" required>
+                </div>
+                <div class="form-row">
+                    <label for="editAddress">Street Address:</label>
+                    <input type="text" id="editAddress" name="address">
+            
+                    <label for="editCity">City:</label>
+                    <input type="text" id="editCity" name="city">
+
+                    <label for="editState">State:</label>
+                    <input type="text" id="editState" name="state" maxlength="2" style="width: 50px;">
+                
+                    <label for="editZip">Zip:</label>
+                    <input type="text" id="editZip" name="zip" maxlength="10">
+                </div>
+                <div class="form-row">
+                    <label for="editPhone">Phone Number:</label>
+                    <input type="tel" id="editPhone" name="phone">
+            
+                    <label for="editEmail">Email:</label>
+                    <input type="email" id="editEmail" name="email">
+                </div>
+                <div class="form-row">
+                    <label for="editParentFirstName">Parent First Name:</label>
+                    <input type="text" id="editParentFirstName" name="parentFirstName">
+            
+                    <label for="editParentLastName">Parent Last Name:</label>
+                    <input type="text" id="editParentLastName" name="parentLastName">
+                </div>
+                <div class="form-row">
+                    <label for="editIsActive">Active?</label>
+                    <select id="editIsActive" name="isActive">
+                        <option value="1">Yes</option>
+                        <option value="0">No</option>
+                    </select>
+                
+                    <button type="button" id ="edit-update-button">Submit</button>
+                    <button type="button" id="edit-cancel-button">Cancel</button>
+                </div>
+            </form>
+        </div>
+        
+    </section>
+
+</main>
+
+<footer>
+    <p>&copy; 2025 High Strung - Michael McGuan and Derek Woodard</p>
+</footer>
+
+<script src="/static/app.js"></script>
+
+</body>
+</html>

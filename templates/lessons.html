@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link href="/static/main.css" rel="stylesheet" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>High Strung</title>
+</head>
+
+<body>
+
+    <header>
+        <h1>High Strung - Group 4</h1>
+        <p>Music Studio Management System</p>
+    </header>
+
+    <nav class="main-nav">
+        <a href="index.html">Home</a>
+        <a href="students.html">Students</a>
+        <a href="lessons.html">Lessons</a>
+        <a href="instruments.html">Instruments</a>
+        <a href="pieces.html">Pieces</a>
+        <a href="composers.html">Composers</a>
+    </nav>
+
+<main>
+    <section>
+    <h2>Lessons</h2>
+        <p class="mbmt-10">This page allows you to view data about the lessons a teacher has given. A record in this table
+            indicates that a student attended a lesson on the date specified. The system does not
+            track missed or canceled lessons.</p>
+
+        <div class="add-lesson">
+            <button class="add-lesson-button">Add New Lesson</button>
+        </div>
+        
+        <table class="lesson-table">
+            <thead>
+                <tr>
+                    <th>Lesson ID</th>   <!--references ID but populates name --> 
+                    <th>Student</th>
+                    <th>Instrument</th>
+                    <th>Lesson Date</th>
+                    <th>Comment</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Lisa Hernandez</td>
+                    <td>2024-01-13</td>
+                    <td>Piano</td>
+                    <td>Worked on left hand technique</td>
+                </tr>
+
+                <tr>
+                    <td>2</td>
+                    <td>Marilyn Freeman</td>
+                    <td>2022-09-15</td>
+                    <td>Violin</td>
+                    <td>First violin lesson, covered ergonomics</td>
+                </tr>
+
+                <tr>
+                    <td>3</td>
+                    <td>Arnold Lee</td>
+                    <td>2025-01-05</td>
+                    <td>Guitar</td>
+                    <td>First guitar lesson, covered basic chord shapes</td>
+                </tr>
+                <!--{products.map((product, index) => (
+                    <ProductRow key={index} product={product} />
+            ))} -->
+            </tbody>
+        </table>
+    </section>
+
+    <section class="center-form">
+        <div class="add-form form-layout" style="display: none;">
+            <form id="add-form">
+                <h3 class="mbmt-10 form-title-decorator">Add New Lesson</h3>
+                <div class="form-row">
+                    <label for="student">Student:</label>
+                    <select id="student" name="student">
+                        <option value="0" disabled selected></option>
+                        <option value="1">Lisa Hernandez</option>
+                        <option value="2">Marilyn Freeman</option>
+                        <option value="3">Arnold Lee</option>
+                    </select>
+                
+                    <label for="instrument">Instrument:</label>
+                    <select id="instrument" name="instrument">
+                        <option value="0" disabled selected></option>
+                        <option value="1">Piano</option>
+                        <option value="2">Violin</option>
+                        <option value="3">Guitar</option>
+                    </select>
+
+                    <label for="lessonDate">Lesson Date:</label>
+                    <input type="date" id="lessonDate" name="lessonDate" required>
+                </div>
+
+                <div class="form-row">
+                    <label for="lessonComment">Comment:</label>
+                    <textarea id="lessonComment" name="lessonComment" rows="4" cols="300"></textarea>
+
+                    <button type="button" id="add-submit-button">Submit</button>
+                    <button type="button" id="add-cancel-button">Cancel</button>
+                </div>
+
+            </form>
+        </div>
+        
+    </section>
+</main>
+
+<footer>
+    <p>&copy; 2025 High Strung - Michael McGuan and Derek Woodard</p>
+</footer>
+
+<script src="/static/app.js"></script>
+<script src="/static/lessons.js"></script>
+
+</body>
+</html>
